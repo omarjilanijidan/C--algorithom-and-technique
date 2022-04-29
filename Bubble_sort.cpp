@@ -5,34 +5,29 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n,k=1;
     cin>>n;
     int arr[n];
     for(int i=0 ; i<n ; i++)
     {
-        cin>>arr[i];   // 45 23 50 21 40
+        cin>>arr[i];
     }
-    for(int i=0 ; i<n ; i++)  // loop is continue till the end of n
+    for(int i=0 ; i<n ; i++)
     {
-        for(int j=0 ; j<n ; j++) // arr[j] = 45;
+        for(int j=0 ; j<n - k; j++)
         {
-
-
-            if(arr[j]>arr[j+1]) // arr[j]> arr[j+1] or 45 > 23
+            if(arr[j]>arr[j+1])
             {
-                int temp = arr[j]; // temp = 45
-                arr[j]=arr[j+1];   // arr[j] = 23
-                arr[j+1]=temp;     // arr[j+1] = temp or 45
-
+                int temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]= temp;
             }
-
         }
+        k++;
     }
-
     for(int i=0 ; i<n ; i++)
     {
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    return 0;
 }
